@@ -1,5 +1,5 @@
 import { View, Text, Button, Animated, TouchableOpacity } from "react-native";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
@@ -10,6 +10,7 @@ import {
 } from "../../assets/GlobalStyles";
 import { styles } from "./styles";
 import { landingData } from "../../constants/landing";
+import TextButton from "../../components/TextButton";
 
 export enum ROUTES {
   HOME = "Login",
@@ -29,47 +30,30 @@ const Landing = () => {
             height: 55,
           }}
         >
-          <TouchableOpacity
-            activeOpacity={0.6}
-            style={{
+          <TextButton
+            label="Join Now"
+            contentContainerStyle={{
               flex: 1,
               borderRadius: SIZES.radius,
               backgroundColor: COLORS.white,
-              alignItems: "center",
-              justifyContent: "center",
             }}
-          >
-            <Text
-              style={{
-                color: COLORS.primary,
-                ...FONTS.h3,
-                fontWeight: "600",
-              }}
-            >
-              Next
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            activeOpacity={0.6}
-            style={{
+            labelStyle={{
+              color: COLORS.primary,
+              ...FONTS.h3,
+            }}
+          />
+          <TextButton
+            label="Login"
+            contentContainerStyle={{
               flex: 1,
               borderRadius: SIZES.radius,
-              marginLeft: SIZES.radius,
               backgroundColor: COLORS.primary,
-              alignItems: "center",
-              justifyContent: "center",
             }}
-          >
-            <Text
-              style={{
-                color: COLORS.white,
-                ...FONTS.h3,
-                fontWeight: "600",
-              }}
-            >
-              Log in
-            </Text>
-          </TouchableOpacity>
+            labelStyle={{
+              color: COLORS.white,
+              ...FONTS.h3,
+            }}
+          />
         </View>
       </View>
     );

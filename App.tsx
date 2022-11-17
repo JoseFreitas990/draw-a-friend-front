@@ -12,13 +12,15 @@ import { Provider } from "react-redux";
 import React from "react";
 import { AuthStack } from "./src/features/navigation/StackNavigator";
 import TabNavigator from "./src/features/navigation/TabNavigation";
+import { AuthMainLayout } from "./src/components";
 
 export default function App() {
   return (
-    // <Provider store={store}>
-    <NavigationContainer>
-      <AuthStack />
-    </NavigationContainer>
-    //  </Provider>
+    <Provider store={store}>
+      <AuthMainLayout />
+      {/* <NavigationContainer>
+        <AuthStack />
+      </NavigationContainer> */}
+    </Provider>
   );
 }
